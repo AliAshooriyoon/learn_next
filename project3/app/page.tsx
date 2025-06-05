@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Header from "./component/header/Header";
 
 export default function Home() {
@@ -7,6 +8,7 @@ export default function Home() {
 
         <Header />
         Home </div>
+      <Link href={'/archive'}>Archive</Link>
     </>
   );
 }
