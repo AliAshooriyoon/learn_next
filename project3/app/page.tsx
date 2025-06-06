@@ -6,9 +6,8 @@ export default function Home() {
     <>
       <div className="home text-center">
 
-        <Header />
         Home </div>
-      <Link href={'/archive'}>Archive</Link>
+      <div className="text-center text-2xl mt-12"><Link className="text-center" href={'/archive'}>Archive</Link></div>
     </>
   );
 }
