@@ -12,10 +12,10 @@ const YearArchives = ({ params }) => {
     <>
 
       <div className="flex items-center justify-center gap-16 text-center mx-auto">
-        This Year :
-        <div className="flex items-center justify-center gap-16">
+        <div className="flex items-center justify-center gap-16 pt-8">
           <Link href={'/'} >Haus</Link>
           <Link href={'/archive'} >Archives</Link>
+          This Year :
           {news.map(i => <div className="flex" key={i.newID}>
             <Link className="cursor-pointer" href={`/archive/${i.eventDate[2]}`}>Year {i.eventDate[2]}</Link>
           </div>)}
