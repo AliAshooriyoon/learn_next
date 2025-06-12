@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { newsData } from "@/app/data";
 const YearArchives = ({ params }) => {
-
   const news = newsData;
   const filter = params?.filter;
   const selectedYear = filter?.[0];
