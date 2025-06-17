@@ -3,8 +3,8 @@ import Link from "next/link";
 import { useEffect, useState } from "react"
 import { travelData } from "@/data"
 const Archive = () => {
-  console.log(travelData)
-  const [data, setData] = useState([])
+  console.log(travelData);
+  const [data, setData] = useState([]);
   useEffect(() => {
     setData(travelData);
 
