@@ -15,12 +15,13 @@ const ArchivePost = ({ params }) => {
   )
   return (
     <>
-      <div className="bg-amber-700 min-w-64 min-h-32 mx-auto flex flex-col gap-6
-        items-center justify-center text-2xl rounded-2xl p-4">
+      <div className="bg-amber-700 max-w-[80%] min-w-64 min-h-32 mx-auto flex flex-col gap-6
+        items-center justify-center text-3xl rounded-2xl p-4">
         <p className=''>{params.slug}</p>
-        {currentPost && <div className="flex flex-col items-center justify-center gap-6 text-lg text-center">
-          <p className="">{currentPost.travelShortDetails}</p>
-          <p className="">{currentPost.travelDetails}</p>
+        {currentPost && <div className="flex flex-col  gap-12 text-lg text-left">
+          <p className="text-2xl">{currentPost.travelShortDetails}</p>
+          <p className="text-lg">{currentPost.travelDetails}</p>
+          <p className="text-left text-xl"> Date: {currentPost.date[0]}.{currentPost.date[1]}.{currentPost.date[2]} </p>
         </div>}
       </div>
     </>
