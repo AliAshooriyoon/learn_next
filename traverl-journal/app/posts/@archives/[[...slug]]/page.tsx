@@ -3,8 +3,11 @@ import { travelData } from "@/data";
 import { useState, useEffect } from "react"
 const ArchivePost = ({ params }) => {
   const [currentPost, setCurrentpost] = useState(null)
+
+  // {data?.map((i) => <div className=""> <Link href={`/posts/${i.slug}`}> {i.travelName} </Link> </div>)}
+
   useEffect(() => {
-    setCurrentpost(travelData.find((i) => i.slug == params.slug));
+    setCurrentpost(travelData.find((i) => i.slug == params.slug[0]));
   }, [])
 
   useEffect(
@@ -17,7 +20,7 @@ const ArchivePost = ({ params }) => {
     <>
       <div className="bg-cyan-900 max-w-[70%] min-w-64 min-h-32 mx-auto flex flex-col gap-6
         items-center justify-center text-3xl rounded-2xl p-8">
-        <p className=''>{params.slug}</p>
+        <p className=''>{currentPost?.travelName}</p>
         {currentPost && <div className="flex flex-col  gap-12 text-lg text-left">
           <p className="text-2xl">{currentPost.travelShortDetails}</p>
           <p className="text-lg">{currentPost.travelDetails}</p>
