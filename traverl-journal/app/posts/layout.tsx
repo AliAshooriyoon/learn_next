@@ -1,11 +1,11 @@
-const Layoutposts = ({ archives, latest, children }) => {
+const Layoutposts = ({ archives, latest }) => {
   return (
     <>
       <div className="">
         Posts
         {archives}
         {latest}
-        {children}
+        {/* {children} */}
       </div>
     </>
   )

@@ -1,13 +1,20 @@
 "use client"
 import { travelData } from "@/data";
 import { useState, useEffect } from "react"
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 const ArchivePost = ({ params }) => {
   const [currentPost, setCurrentpost] = useState(null)
-
-  // {data?.map((i) => <div className=""> <Link href={`/posts/${i.slug}`}> {i.travelName} </Link> </div>)}
-
+  const path = usePathname()
+  const data = travelData;
+  const isHereJustPosts = path == '/posts';
   useEffect(() => {
-    setCurrentpost(travelData.find((i) => i.slug == params.slug[0]));
+    console.log(travelData)
+    console.log(path == '/posts')
+    console.log(params.slug)
+    // travelData.find((i) => i.slug == params.slug[0])
+    setCurrentpost(!isHereJustPosts && travelData.find((i) => i.slug == params.slug[0])
+    );
   }, [])
 
   useEffect(
@@ -20,6 +27,9 @@ const ArchivePost = ({ params }) => {
     <>
       <div className="bg-cyan-900 max-w-[70%] min-w-64 min-h-32 mx-auto flex flex-col gap-6
         items-center justify-center text-3xl rounded-2xl p-8">
+
+        {isHereJustPosts && data?.map((i) => <div className="">
+          <Link href={`/posts/${i.slug}`}> {i.travelName} </Link> </div>)}
         <p className=''>{currentPost?.travelName}</p>
         {currentPost && <div className="flex flex-col  gap-12 text-lg text-left">
           <p className="text-2xl">{currentPost.travelShortDetails}</p>
