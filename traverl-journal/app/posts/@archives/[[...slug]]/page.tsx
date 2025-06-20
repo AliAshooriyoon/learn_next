@@ -9,9 +9,6 @@ const ArchivePost = ({ params }) => {
   const data = travelData;
   const isHereJustPosts = path == '/posts';
   useEffect(() => {
-    console.log(travelData)
-    console.log(path == '/posts')
-    console.log(params.slug)
     // travelData.find((i) => i.slug == params.slug[0])
     setCurrentpost(!isHereJustPosts && travelData.find((i) => i.slug == params.slug[0])
     );
@@ -19,7 +16,6 @@ const ArchivePost = ({ params }) => {
 
   useEffect(
     () => {
-      console.log(currentPost)
     }, [currentPost]
 
   )
