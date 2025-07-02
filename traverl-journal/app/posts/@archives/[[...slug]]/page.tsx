@@ -2,7 +2,7 @@
 import { travelData } from "@/data";
 import { useState, useEffect } from "react"
 import Link from "next/link";
-import { notFound, usePathname } from "next/navigation";
+import { usePathname } from "next/navigation";
 const ArchivePost = ({ params }) => {
   const [currentPost, setCurrentpost] = useState(null)
   const path = usePathname()
