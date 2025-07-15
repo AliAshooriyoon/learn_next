@@ -8,7 +8,7 @@ const Post = ({ params }) => {
   return (
     <>
       <div className="">
-        Post
+        Post von
         {` ${adresse.includes('/posts/') && params?.slug[0]}`}
       </div>
     </>

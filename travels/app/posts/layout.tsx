@@ -1,3 +1,5 @@
+import List from "@/components/list/List";
+
 const PostsLayout = ({ archives, latest }) => {
   return (
 
@@ -6,6 +8,7 @@ const PostsLayout = ({ archives, latest }) => {
         {/* {children} */}
         {archives}
         {latest}
+        {/* <List /> */}
       </div>
     </>
   )
